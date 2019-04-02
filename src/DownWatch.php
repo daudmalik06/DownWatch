@@ -62,6 +62,10 @@ class Watch
      */
     private function sendEmailToAdmin($maxReports)
     {
+        if(!env('SEND_MAIL'))
+        {
+            return ;
+        }
         //Create a new PHPMailer instance
         $mail = $this->mailer;
         $mail->isSMTP();

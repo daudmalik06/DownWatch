@@ -20,5 +20,5 @@ try{
 }catch (Exception $exception)
 {
     echo 'Following error occured'.PHP_EOL;
-    echo $exception->getMessage();
+    echo $exception->getMessage().PHP_EOL;
 }
