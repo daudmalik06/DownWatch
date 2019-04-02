@@ -99,9 +99,9 @@ class Watch
 
         //send the message, check for errors
         if (!$mail->send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
+            echo "Mailer Error: " . $mail->ErrorInfo.PHP_EOL;
         } else {
-            echo "Message sent!";
+            echo "Message sent!".PHP_EOL;
         }
     }
 }
