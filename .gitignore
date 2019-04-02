@@ -1,0 +1,7 @@
+*.swp
+.idea/
+tmp/
+!Output/.gitkeep
+Output/*
+.env
+vendor

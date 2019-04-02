@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "DownWatch\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "vlucas/phpdotenv": "^3.3"
+    }
+}
