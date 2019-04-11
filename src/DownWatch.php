@@ -93,9 +93,9 @@ class Watch
 
         //Set who the message is to be sent to
         $mail->addAddress(env('ADMIN_EMAIL'));
-        $mail->Subject = 'TIM Down Report';
+        $mail->Subject = env('PROJECT_NAME','Your Project').' Down Report';
 
-        $mail->Body = 'Critical number: '.$maxReports.' of down reporting has been detected';
+        $mail->Body = 'Critical number: '.$maxReports.' of down reporting has been detected by DownWatch';
 
         //send the message, check for errors
         if (!$mail->send()) {
