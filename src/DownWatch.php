@@ -49,8 +49,13 @@ class Watch
                 $maxReports = $stat['value'];
             }
         }
-        if($maxReports > $criticalReportNumber)
+        $outputDir = realpath(__DIR__.'/../Output/');
+        $peakFile = $outputDir.date('Ymd').'_'.$maxReports;
+        if($maxReports > $criticalReportNumber and !file_exist($peakFile))
         {
+            //delete all old files
+            array_map('unlink', glob($outputDir."/*"));
+            file_put_contents($peakFile,'');
             print "Max reports: {$maxReports} are greater than critical: {$criticalReportNumber}".PHP_EOL;
             $this->sendEmailToAdmin($maxReports);
         }
