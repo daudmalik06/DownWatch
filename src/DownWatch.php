@@ -54,7 +54,7 @@ class Watch
         if($maxReports > $criticalReportNumber and !file_exists($peakFile))
         {
             //delete all old files
-            array_map('unlink', glob($outputDir."/*"));
+            //array_map('unlink', glob($outputDir."/*"));
             file_put_contents($peakFile,'');
             print "Max reports: {$maxReports} are greater than critical: {$criticalReportNumber}".PHP_EOL;
             $this->sendEmailToAdmin($maxReports);
