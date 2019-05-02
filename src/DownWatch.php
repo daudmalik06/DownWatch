@@ -51,7 +51,7 @@ class Watch
         }
         $outputDir = realpath(__DIR__.'/../Output/');
         $peakFile = $outputDir.date('Ymd').'_'.$maxReports;
-        if($maxReports > $criticalReportNumber and !file_exist($peakFile))
+        if($maxReports > $criticalReportNumber and !file_exists($peakFile))
         {
             //delete all old files
             array_map('unlink', glob($outputDir."/*"));
